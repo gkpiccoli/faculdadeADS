@@ -5,10 +5,10 @@ class Cliente:
         self.senha = senha
 
     def __str__(self):
-        return f'Nome: {self.nome}\nCPF: {self.cpf}\nSenha: {self.senha}'
+        return f"Nome: {self.nome}\nCPF: {self.cpf}\nSenha: {self.senha}"
 
     def __repr__(self):
-        return f'Nome: {self.nome}\nCPF: {self.cpf}\nSenha: {self.senha}'
+        return f"Nome: {self.nome}\nCPF: {self.cpf}\nSenha: {self.senha}"
 
     def get_nome(self):
         return self.nome
