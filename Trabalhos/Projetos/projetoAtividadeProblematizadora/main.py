@@ -1,4 +1,29 @@
-from srcs.formaGeometrica import FormaGeometrica
+from abc import ABC, abstractmethod
+import math
+
+
+class FormaGeometrica(ABC):
+    def __init__(self, cor):
+        self.__cor = cor
+
+    @property
+    def cor(self):
+        return self.__cor
+
+    def alterarCor(self, cor):
+        self.__cor = cor
+
+    @abstractmethod
+    def calcularArea(self):
+        pass
+
+    @abstractmethod
+    def calcularPerimetro(self):
+        pass
+
+    @abstractmethod
+    def exibirDados(self):
+        pass
 
 
 class Retangulo(FormaGeometrica):
@@ -6,14 +31,6 @@ class Retangulo(FormaGeometrica):
         super().__init__(cor)
         self.__lado1 = lado1
         self.__lado2 = lado2
-
-    @property
-    def lado1(self):
-        return self.__lado1
-
-    @property
-    def lado2(self):
-        return self.__lado2
 
     def calcularArea(self):
         return self.__lado1 * self.__lado2
@@ -27,23 +44,54 @@ class Retangulo(FormaGeometrica):
             f"tem área = {self.calcularArea()} e tem perímetro = {self.calcularPerimetro()}."
         )
 
-# PARTE 1 OK
-# retangulo1 = Retangulo("azul", 10, 20)
-# print("Área = ", retangulo1.calcularArea())
-# print("Perímetro = ", retangulo1.calcularPerimetro())
-# retangulo2 = Retangulo("vermelha", 3, 4)
-# print(retangulo2.exibirDados())
 
-retangulo1 = Retangulo("azul", 10, 20)
-print(
-    f"O retângulo de lados {retangulo1.lado1} e {retangulo1.lado2} tem a cor {retangulo1.cor}."
-)
-print(
-    "Sua área é",
-    retangulo1.calcularArea(),
-    "e seu perímetro é",
-    retangulo1.calcularPerimetro(),
-    ".",
-)
-retangulo2 = Retangulo("vermelha", 3, 4)
-print(retangulo2.exibirDados())
+class Circunferencia(FormaGeometrica):
+    def __init__(self, cor, raio):
+        super().__init__(cor)
+        self.__raio = raio
+
+    def calcularArea(self):
+        return math.pi * math.pow(self.__raio, 2)
+
+    def calcularPerimetro(self):
+        return 2 * math.pi * self.__raio
+
+    def exibirDados(self):
+        return (
+            f"A circunferência de cor {self.cor} com raio {self.__raio} "
+            f"tem área = {self.calcularArea():.2f} e tem perímetro = {self.calcularPerimetro():.2f}."
+        )
+
+
+class Triangulo(FormaGeometrica):
+    def __init__(self, cor, lado1, lado2, lado3):
+        super().__init__(cor)
+        self.__lado1 = lado1
+        self.__lado2 = lado2
+        self.__lado3 = lado3
+
+    def calcularArea(self):
+        s = (self.__lado1 + self.__lado2 + self.__lado3) / 2
+        return math.sqrt(
+            s * (s - self.__lado1) * (s - self.__lado2) * (s - self.__lado3)
+        )
+
+    def calcularPerimetro(self):
+        return self.__lado1 + self.__lado2 + self.__lado3
+
+    def exibirDados(self):
+        return (
+            f"O triângulo de cor {self.cor} com medidas {self.__lado1}, {self.__lado2}, e {self.__lado3} "
+            f"tem área = {self.calcularArea():.2f} e tem perímetro = {self.calcularPerimetro():.2f}."
+        )
+
+
+if __name__ == "__main__":
+    print("Lista de formas geométricas:")
+    lista_formas = []
+    lista_formas.append(Retangulo("azul", 10, 20))
+    lista_formas.append(Circunferencia("laranja", 2))
+    lista_formas.append(Triangulo("verde", 3, 4, 5))
+
+    for forma in lista_formas:
+        print(forma.exibirDados())
