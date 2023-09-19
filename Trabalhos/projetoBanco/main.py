@@ -21,3 +21,9 @@ conta1 = Conta("001", cliente1, 50000.0, 100000.0)
 print(cliente1.nome)
 print(cliente1.cpf)
 print(cliente1.senha)
+
+print("Efetuando saque...")
+if conta.sacar(111100):
+    print("Saque efetuado com sucesso!")
+else:
+    print("Saldo insuficiente!")
