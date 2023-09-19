@@ -1,6 +1,6 @@
-
 # Importando a classe ABC (Abstract Base Classes) e o decorador abstractmethod
 from abc import ABC, abstractmethod
+
 
 # Definição da classe abstrata FormaGeometrica
 class FormaGeometrica(ABC):
