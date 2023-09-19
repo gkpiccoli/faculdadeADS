@@ -1,16 +1,23 @@
+
+# Importando a classe ABC (Abstract Base Classes) e o decorador abstractmethod
 from abc import ABC, abstractmethod
 
+# Definição da classe abstrata FormaGeometrica
 class FormaGeometrica(ABC):
+    # Construtor da classe, inicializa com uma cor
     def __init__(self, cor):
-        self.__cor = cor
+        self.__cor = cor  # Atributo privado para armazenar a cor
 
+    # Propriedade para acessar o valor da cor
     @property
     def cor(self):
         return self.__cor
 
+    # Método para alterar a cor da forma
     def alterarCor(self, cor):
         self.__cor = cor
 
+    # Métodos abstratos que deverão ser implementados pelas classes filhas
     @abstractmethod
     def calcularArea(self):
         pass
