@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 import math
 
 
+# FormaGeometrica class
 class FormaGeometrica(ABC):
     def __init__(self, cor):
         self.__cor = cor
@@ -26,6 +27,7 @@ class FormaGeometrica(ABC):
         pass
 
 
+# Retangulo class
 class Retangulo(FormaGeometrica):
     def __init__(self, cor, lado1, lado2):
         super().__init__(cor)
@@ -45,6 +47,7 @@ class Retangulo(FormaGeometrica):
         )
 
 
+# Circunferencia class
 class Circunferencia(FormaGeometrica):
     def __init__(self, cor, raio):
         super().__init__(cor)
@@ -63,6 +66,7 @@ class Circunferencia(FormaGeometrica):
         )
 
 
+# Triangulo class
 class Triangulo(FormaGeometrica):
     def __init__(self, cor, lado1, lado2, lado3):
         super().__init__(cor)
@@ -81,17 +85,18 @@ class Triangulo(FormaGeometrica):
 
     def exibirDados(self):
         return (
-            f"O triângulo de cor {self.cor} com medidas {self.__lado1}, {self.__lado2}, e {self.__lado3} "
+            f"O retângulo de cor {self.cor} com medidas {self.__lado1}, {self.__lado2}, e {self.__lado3} "
             f"tem área = {self.calcularArea():.2f} e tem perímetro = {self.calcularPerimetro():.2f}."
         )
 
 
+# Main part
 if __name__ == "__main__":
-    print("Lista de formas geométricas:")
+    print("Lista de Formas Geométricas:")
     lista_formas = []
     lista_formas.append(Retangulo("azul", 10, 20))
+    lista_formas.append(Retangulo("vermelha", 3, 4))
     lista_formas.append(Circunferencia("laranja", 2))
-    lista_formas.append(Triangulo("verde", 3, 4, 5))
 
     for forma in lista_formas:
         print(forma.exibirDados())
