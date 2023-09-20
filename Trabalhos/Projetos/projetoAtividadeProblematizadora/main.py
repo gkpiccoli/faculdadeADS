@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 import math
 
 
-# Classe abstrata FormaGeometrica
+# Classe abstrata FormaGeometrica que serve de padrão para as subclasses
 class FormaGeometrica(ABC):
     # Inicializa a cor
     def __init__(self, cor):
