@@ -4,37 +4,6 @@ import math
 from srcs.formaGeometrica import FormaGeometrica
 
 
-# Classe abstrata FormaGeometrica que serve de padrão para as subclasses
-# class FormaGeometrica(ABC):
-#     # Inicializa a cor
-#     def __init__(self, cor):
-#         self.__cor = cor
-
-#     # Propriedade para acessar a cor
-#     @property
-#     def cor(self):
-#         return self.__cor
-
-#     # Método para alterar a cor
-#     def alterarCor(self, cor):
-#         self.__cor = cor
-
-#     # Método abstrato para calcular área
-#     @abstractmethod
-#     def calcularArea(self):
-#         pass
-
-#     # Método abstrato para calcular perímetro
-#     @abstractmethod
-#     def calcularPerimetro(self):
-#         pass
-
-#     # Método abstrato para exibir dados
-#     @abstractmethod
-#     def exibirDados(self):
-#         pass
-
-
 # Classe concreta Retângulo
 class Retangulo(FormaGeometrica):
     # Inicializa e chama construtor da superclasse
