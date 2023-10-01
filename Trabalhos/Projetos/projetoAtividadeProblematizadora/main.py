@@ -1,37 +1,38 @@
 # Importa módulos necessários
-from abc import ABC, abstractmethod
 import math
+
+from srcs.formaGeometrica import FormaGeometrica
 
 
 # Classe abstrata FormaGeometrica que serve de padrão para as subclasses
-class FormaGeometrica(ABC):
-    # Inicializa a cor
-    def __init__(self, cor):
-        self.__cor = cor
+# class FormaGeometrica(ABC):
+#     # Inicializa a cor
+#     def __init__(self, cor):
+#         self.__cor = cor
 
-    # Propriedade para acessar a cor
-    @property
-    def cor(self):
-        return self.__cor
+#     # Propriedade para acessar a cor
+#     @property
+#     def cor(self):
+#         return self.__cor
 
-    # Método para alterar a cor
-    def alterarCor(self, cor):
-        self.__cor = cor
+#     # Método para alterar a cor
+#     def alterarCor(self, cor):
+#         self.__cor = cor
 
-    # Método abstrato para calcular área
-    @abstractmethod
-    def calcularArea(self):
-        pass
+#     # Método abstrato para calcular área
+#     @abstractmethod
+#     def calcularArea(self):
+#         pass
 
-    # Método abstrato para calcular perímetro
-    @abstractmethod
-    def calcularPerimetro(self):
-        pass
+#     # Método abstrato para calcular perímetro
+#     @abstractmethod
+#     def calcularPerimetro(self):
+#         pass
 
-    # Método abstrato para exibir dados
-    @abstractmethod
-    def exibirDados(self):
-        pass
+#     # Método abstrato para exibir dados
+#     @abstractmethod
+#     def exibirDados(self):
+#         pass
 
 
 # Classe concreta Retângulo
@@ -113,10 +114,7 @@ class Triangulo(FormaGeometrica):
 if __name__ == "__main__":
     # Cria algumas formas geométricas
     print("Lista de Formas Geométricas:")
-    lista_formas = []
-    lista_formas.append(Retangulo("azul", 10, 20))
-    lista_formas.append(Retangulo("vermelha", 3, 4))
-    lista_formas.append(Circunferencia("laranja", 2))
+    lista_formas = [Retangulo("azul", 10, 20), Retangulo("vermelha", 3, 4), Circunferencia("laranja", 2)]
 
     # Exibe os dados de cada forma
     for forma in lista_formas:
