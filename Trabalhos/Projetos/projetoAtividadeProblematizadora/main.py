@@ -86,6 +86,6 @@ if __name__ == "__main__":
         Circunferencia("laranja", 2),
     ]
 
-    # Exibe os dados de cada forma
+    # Exibe os dados de cada formaa
     for forma in lista_formas:
         print(forma.exibirDados())
