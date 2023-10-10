@@ -25,6 +25,7 @@ class Retangulo(FormaGeometrica):
     # Implementa exibição de dados
     def exibirDados(self):
         return f"O retângulo de cor {self.cor} com medidas {self.__lado1} e {self.__lado2} tem área = {self.calcularArea()} e tem perímetro = {self.calcularPerimetro()}."
+        
 
 
 # Classe concreta Circunferência que herda de FormaGeometrica
@@ -86,6 +87,12 @@ if __name__ == "__main__":
         Circunferencia("laranja", 2),
     ]
 
-    # Exibe os dados de cada formaa
+    # Exibe os dados de cada forma
     for forma in lista_formas:
         print(forma.exibirDados())
+
+
+#GUSTAVO KURECK PICCOLI
+#RA: 199005
+#ANÁLISE E DESENVOVIMENTO DE SISTEMAS - 13307 - LINGUAGEM DE PROGRAMAÇÃO - EAD54-12
+#Demonstração em vídeo dos conceitos de POO 
